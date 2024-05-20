@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Event Handling with addEventListener</title>
+    <style>
+      #container {
+        padding: 20px;
+        border: 1px solid #ccc;
+        margin-top: 20px;
+      }
+      .button {
+        padding: 10px 20px;
+        margin: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="header">Event Handling Example</h1>
+      <button id="changeTextButton" class="button">Change Text</button>
+      <button id="colorButton" class="button">Change Color</button>
+    </div>
+
+    <script>
+      // Accessing elements
+      var header = document.getElementById("header");
+      var changeTextButton = document.getElementById("changeTextButton");
+      var colorButton = document.getElementById("colorButton");
+
+      // Adding event listener for changing text
+      changeTextButton.addEventListener("click", function () {
+        header.textContent = "Text Changed!";
+      });
+
+      // Adding event listener for changing color
+      colorButton.addEventListener("click", function () {
+        header.style.color = header.style.color === "blue" ? "black" : "blue";
+      });
+
+      // Adding multiple event listeners to the same element
+      changeTextButton.addEventListener("mouseover", function () {
+        changeTextButton.style.backgroundColor = "lightgray";
+      });
+
+      changeTextButton.addEventListener("mouseout", function () {
+        changeTextButton.style.backgroundColor = "";
+      });
+    </script>
+  </body>
+</html>

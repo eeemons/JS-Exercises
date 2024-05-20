@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Data Collection</title>
+  </head>
+  <body>
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required /><br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required /><br />
+
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required /><br />
+
+      <label for="gender">Gender:</label>
+      <select id="gender" name="gender" required>
+        <option value="male">Male</option>
+        <option value="female">Female</option>
+        <option value="other">Other</option></select
+      ><br />
+
+      <label for="comments">Comments:</label>
+      <textarea id="comments" name="comments"></textarea><br />
+
+      <button type="button" onclick="collectFormData()">Submit</button>
+    </form>
+
+    <div id="output"></div>
+
+    <script>
+      function collectFormData() {
+        // Access the form
+        var form = document.getElementById("myForm");
+
+        // Retrieve form data
+        var formData = {
+          name: form.name.value,
+          email: form.email.value,
+          age: form.age.value,
+          gender: form.gender.value,
+          comments: form.comments.value,
+        };
+
+        // Display the collected data
+        var output = document.getElementById("output");
+        output.innerHTML =
+          "<h3>Collected Form Data</h3>" +
+          "<p>Name: " +
+          formData.name +
+          "</p>" +
+          "<p>Email: " +
+          formData.email +
+          "</p>" +
+          "<p>Age: " +
+          formData.age +
+          "</p>" +
+          "<p>Gender: " +
+          formData.gender +
+          "</p>" +
+          "<p>Comments: " +
+          formData.comments +
+          "</p>";
+      }
+    </script>
+  </body>
+</html>

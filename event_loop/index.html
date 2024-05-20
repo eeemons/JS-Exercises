@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Events & Event Loop Example</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+      }
+      .container {
+        width: 80%;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      p {
+        color: #666;
+        line-height: 1.6;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Events & Event Loop Example</h1>
+      <button id="btn">Click me!</button>
+      <p id="output"></p>
+    </div>
+
+    <script>
+      // Accessing the button and output element
+      var button = document.getElementById("btn");
+      var output = document.getElementById("output");
+
+      // Adding an event listener to the button
+      button.addEventListener("click", () => {
+        output.textContent = "Button clicked!";
+        // Simulating an asynchronous operation with setTimeout
+        setTimeout(() => {
+          output.textContent += " Asynchronous operation completed!";
+        }, 2000);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Adding & Removing Elements</title>
+    <style>
+      #list:hover {
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Removing Elements</h1>
+    <h2>Click on the item you want to remove</h2>
+    <ul id="list">
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+      <li>Item 4</li>
+      <li>Item 5</li>
+    </ul>
+    <button id="addBtn">Add Item</button>
+    <button id="deleteBtn">Delete Item</button>
+
+    <script>
+      const list = document.getElementById("list");
+      const listItems = list.getElementsByTagName("li");
+      const addBtn = document.getElementById("addBtn");
+      const deleteBtn = document.getElementById("deleteBtn");
+
+      for (let i = 0; i < listItems.length; i++) {
+        const listItem = listItems[i];
+        listItem.addEventListener("click", () => {
+          this.remove();
+        });
+      }
+
+      addBtn.addEventListener("click", function () {
+        const newItem = document.createElement("li");
+        newItem.textContent = "New Item";
+        list.appendChild(newItem);
+      });
+
+      deleteBtn.addEventListener("click", () => {
+        const lastItem = list.lastElementChild;
+        if (lastItem) {
+          lastItem.remove();
+        }
+      });
+    </script>
+  </body>
+</html>

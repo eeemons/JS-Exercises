@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Accessing and Modifying DOM Example</title>
+    <style>
+      #container {
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+      .description {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="container">
+      <h1 id="header">Hello, World!</h1>
+      <p class="description">This is a sample paragraph.</p>
+      <button id="changeTextButton">Change Text</button>
+    </div>
+
+    <script>
+      // Accessing elements with getElementById & querySelector
+      var header = document.getElementById("header");
+      var paragraph = document.querySelector(".description");
+      var button = document.getElementById("changeTextButton");
+
+      // Changing content and style
+      header.textContent = "Hello, DOM!";
+      paragraph.style.color = "green";
+
+      // Adding an event listener to the button
+      button.addEventListener("click", function () {
+        header.textContent = "Text Changed!";
+        paragraph.innerTEXT = "<strong>Paragraph content changed.</strong>";
+      });
+
+      // Creating and appending a new element
+      var newElement = document.createElement("p");
+      newElement.textContent = "This is a new paragraph.";
+      document.getElementById("container").appendChild(newElement);
+    </script>
+  </body>
+</html>
