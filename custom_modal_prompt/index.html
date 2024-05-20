@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom modal prompt</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <button onclick="openPrompt()">Open Prompt</button>
+
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closePrompt()">&times;</span>
+        <p>Enter your name:</p>
+        <input type="text" id="nameInput" />
+        <button onclick="submitPrompt()">Submit</button>
+      </div>
+    </div>
+  </body>
+</html>
